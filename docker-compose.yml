@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  api:
+    container_name: carbon-api
+    build:
+      context: ./
+      # target: production
+    image: oyhetola/carbon-api
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    environment:
+      NODE_ENV: production
+      DB_HOST: db
+      DB_URI: mongodb://carbonuser:carbon1234@127.0.0.1:27017/logistics
+    links:
+      - db
+    volumes:
+      - './:/src'
+  db:
+    image: 'mongo:latest'
+    container_name: 'my-mongo-container'
+    environment:
+      - MONGO_INITDB_DATABASE=logistics
+      - MONGO_INITDB_ROOT_USERNAME=carbonuser
+      - MONGO_INITDB_ROOT_PASSWORD=carbon1234
+    volumes:
+      - ./config/db.config.js:/docker-entrypoint-initdb.d/db.config.js:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017'

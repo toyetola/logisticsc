@@ -13,7 +13,7 @@ async function validatePassword(plainPassword, hashedPassword){
 //sign up with email and password
 exports.signup = async (req, res, next) => {
     try{
-        if (req.body.role && (req.body.role == "admin" || req.body.role == "rider")){
+        if (req.body.role && (req.body.role == "admin")){
             res.status(403).json({error:"error", message:"Only an admin user can add another admin user"})
         }
         const {email, password, role, firstname, lastname} = req.body

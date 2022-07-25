@@ -35,6 +35,7 @@ If successfully 11 test cases should pass
 **Here are the Endpoints you can test out:**
 
 Checkout the API endpoints usage via this API document:
+
 https://documenter.getpostman.com/view/3707157/UzXKXKdq
 
 The App assumes that their are two-three roles for this system:
@@ -51,16 +52,21 @@ POST {{baseUrl}}/login
 **Customer make order to request pick up**
 
 Header['Authorization'] = `Bearer <Token>` #Gotten from login api
+
 POST {{baseUrl}}/api/createOrder
 
 **Customer List all order he has made so far**
 
 Header['Authorization'] = `Bearer <Token>` #Gotten from login api
+
+
 GET {{baseUrl}}/api/getMyOrders
 
 **Customer gets a single order he made previously**
 
 Header['Authorization'] = `Bearer <Token>` #Gotten from login api
+
+
 GET {{baseUrl}}/api/singleOrder/:orderId
 
 

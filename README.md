@@ -83,7 +83,7 @@ Header['Authorization'] = `Bearer <Token>` #Gotten from login api
 GET {{baseUrl}}/api/listOrders
 
 
-RUN TESTS
+**RUN TESTS**
 
 ```npm run test```
 

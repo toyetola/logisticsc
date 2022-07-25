@@ -9,11 +9,11 @@ services:
     depends_on:
       - db
     ports:
-      - 5000:5000
+      - 3000:3000
     environment:
       NODE_ENV: production
       DB_HOST: db
-      DB_URI: mongodb://carbonuser:carbon1234@127.0.0.1:27017/logistics
+      DB_URI: mongodb://root:carbon1234@127.0.0.1:27017/logistics
     links:
       - db
     volumes:
@@ -23,10 +23,11 @@ services:
     container_name: 'my-mongo-container'
     environment:
       - MONGO_INITDB_DATABASE=logistics
-      - MONGO_INITDB_ROOT_USERNAME=carbonuser
+      - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=carbon1234
     volumes:
       - ./config/db.config.js:/docker-entrypoint-initdb.d/db.config.js:ro
       - ./mongo-volume:/data/db
+      # - /mongodb_data_container:/data/db
     ports:
-      - '27017'
+      - 27017:27017

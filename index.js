@@ -30,4 +30,6 @@ app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 })
 
+console.log(process.env.DB_URI)
+
 module.exports = app

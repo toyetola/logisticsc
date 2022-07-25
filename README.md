@@ -38,7 +38,7 @@ Checkout the API endpoints usage via this API document:
 
 https://documenter.getpostman.com/view/3707157/UzXKXKdq
 
-The App assumes that their are two-three roles for this system:
+The App assumes that there are two-three roles for this system:
 
 1. customer
 2. admin
@@ -47,6 +47,7 @@ The App assumes that their are two-three roles for this system:
 **The customers signup and login**
 
 POST {{baseUrl}}/signup
+
 POST {{baseUrl}}/login
 
 **Customer make order to request pick up**

@@ -5,6 +5,7 @@ const {createOrder, getAllMyOrders, updateOrder,
     updateOrderStatus, ListAllOrders, getSingleOrder, cancelOrder} 
 = require('../controllers/orderController')
 const verifyToken  =  require('../middlewares/authMiddleware')
+const validateStatus  =  require('../middlewares/validateStatus')
 
 /* Base url
 @return text to welcome you to  */
@@ -25,9 +26,10 @@ router.use(verifyToken)
 router.post('/api/createOrder', createOrder)
 router.get('/api/getMyOrders', getAllMyOrders)
 router.patch('/api/updateOrder/:orderId', updateOrder)
-router.patch('/api/updateOrderStatus/:orderId', updateOrderStatus)
 router.get('/api/listOrders/', ListAllOrders)
 router.get('/api/singleOrder/:orderId', getSingleOrder)
 router.delete('/api/cancelOrder/:orderId', cancelOrder)
+
+router.patch('/api/updateOrderStatus/:orderId', validateStatus, updateOrderStatus)
 
 module.exports = router

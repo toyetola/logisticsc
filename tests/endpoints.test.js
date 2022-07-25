@@ -111,7 +111,6 @@ describe('Admin/Rider Enpoints', () => {
         .send({
             "delivery_status":"PICKED_UP"
         })
-        console.log(res.body)
         expect(res.statusCode).toEqual(200)
         // expect(res.body).toHaveProperty("data")
     })
@@ -125,7 +124,6 @@ describe('Admin/Rider Enpoints', () => {
         .send({
             "delivery_status":"PICKED_UP"
         })
-        console.log(res.body)
         expect(res.statusCode).toBe(403)
     })
 
@@ -137,7 +135,6 @@ describe('Admin/Rider Enpoints', () => {
         .send({
             "delivery_status":"WAREHOUSE"
         })
-        console.log(res.body)
         expect(res.statusCode).toBe(200)
     })
 
@@ -149,7 +146,6 @@ describe('Admin/Rider Enpoints', () => {
         .send({
             "delivery_status":"DELIVERED"
         })
-        console.log(res.body)
         expect(res.statusCode).toBe(200)
     })
 
@@ -161,7 +157,6 @@ describe('Admin/Rider Enpoints', () => {
         .send({
             "delivery_status":"DELIVERED"
         })
-        console.log(res.body)
         expect(res.statusCode).toBe(403)
     })
 })
@@ -175,7 +170,6 @@ describe('Customer action after some admin actions', () => {
         .send({
             "destination_address":"good place"
         })
-        console.log(res.body)
         expect(res.statusCode).toEqual(403)
     })
 

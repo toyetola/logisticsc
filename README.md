@@ -12,8 +12,25 @@ Create a .env file in the root of the project and copy .env.example to it
 
 Replace the DB_URI and DB_URI_TEST with two different mongodb uri in your local system
 
+OR
+
+you can create a mongo db atlas account at https://account.mongodb.com
+
+Then create two databases in a cluster one for test and the other as the main database
+
 RUN ```npm start``` to start the application.
 
+Your application should be running on ```https://127.0.0.1:3000```
+
+When your application is running and all databases have been set up
+
+RUN 
+
+```
+npm run test
+```
+
+If successfully 11 test cases should pass
 
 **Here are the Endpoints you can test out:**
 
